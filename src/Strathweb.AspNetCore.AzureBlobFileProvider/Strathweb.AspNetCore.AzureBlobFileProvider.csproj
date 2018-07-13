@@ -2,6 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>Azure Blob Storage file provider for ASP.NET Core.</Description>
+    <VersionPrefix>0.1.0-preview</VersionPrefix>
+    <Authors>filipw</Authors>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageTags>azure;blob;storage;aspnetcore;mvc</PackageTags>
+    <PackageIconUrl>https://raw.githubusercontent.com/filipw/Strathweb.TypedRouting.AspNetCore/master/strathweb.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/filipw/Strathweb.AspNetCore.AzureBlobFileProvider</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/filipw/Strathweb.AspNetCore.AzureBlobFileProvider/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/filipw/Strathweb.AspNetCore.AzureBlobFileProvider.git</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
