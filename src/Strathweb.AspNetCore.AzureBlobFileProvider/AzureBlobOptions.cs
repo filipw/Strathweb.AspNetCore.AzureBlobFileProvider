@@ -9,5 +9,7 @@ namespace Strathweb.AspNetCore.AzureBlobFileProvider
         public string Token { get; set; }
 
         public string DocumentContainer { get; set; }
+
+        public string ConnectionString { get; set; }
     }
 }

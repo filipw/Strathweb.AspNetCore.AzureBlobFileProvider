@@ -1,4 +1,5 @@
-﻿using Microsoft.Azure.Storage.Auth;
+﻿using Microsoft.Azure.Storage;
+using Microsoft.Azure.Storage.Auth;
 using Microsoft.Azure.Storage.Blob;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Primitives;
@@ -12,7 +13,20 @@ namespace Strathweb.AspNetCore.AzureBlobFileProvider
 
         public AzureBlobFileProvider(AzureBlobOptions azureBlobOptions)
         {
-            var blobClient = new CloudBlobClient(azureBlobOptions.BaseUri, new StorageCredentials(azureBlobOptions.Token));
+            CloudBlobClient blobClient;
+            if (azureBlobOptions.ConnectionString != null && CloudStorageAccount.TryParse(azureBlobOptions.ConnectionString, out var cloudStorageAccount))
+            {
+                blobClient = cloudStorageAccount.CreateCloudBlobClient();
+            }
+            else if (azureBlobOptions.BaseUri != null && azureBlobOptions.Token != null)
+            {
+                blobClient = new CloudBlobClient(azureBlobOptions.BaseUri, new StorageCredentials(azureBlobOptions.Token));
+            }
+            else
+            {
+                throw new ArgumentException("One of the following must be set: 'ConnectionString' or 'BaseUri'+'Token'!");
+            }
+
             _container = blobClient.GetContainerReference(azureBlobOptions.DocumentContainer);
         }
 

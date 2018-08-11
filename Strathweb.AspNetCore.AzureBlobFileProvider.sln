@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strathweb.AspNetCore.AzureBlobFileProvider", "src\Strathweb.AspNetCore.AzureBlobFileProvider\Strathweb.AspNetCore.AzureBlobFileProvider.csproj", "{B6CE1911-C8FE-474D-9865-1D63961F94B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Strathweb.AspNetCore.AzureBlobFileProvider", "src\Strathweb.AspNetCore.AzureBlobFileProvider\Strathweb.AspNetCore.AzureBlobFileProvider.csproj", "{B6CE1911-C8FE-474D-9865-1D63961F94B4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{E182D482-D1CB-45FE-946D-993FD35240BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleWeb", "src\SampleWeb\SampleWeb.csproj", "{6CC7C3DB-E4B3-42DD-B4E7-867A638F40DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{B6CE1911-C8FE-474D-9865-1D63961F94B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6CE1911-C8FE-474D-9865-1D63961F94B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6CE1911-C8FE-474D-9865-1D63961F94B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CC7C3DB-E4B3-42DD-B4E7-867A638F40DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CC7C3DB-E4B3-42DD-B4E7-867A638F40DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CC7C3DB-E4B3-42DD-B4E7-867A638F40DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CC7C3DB-E4B3-42DD-B4E7-867A638F40DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6CC7C3DB-E4B3-42DD-B4E7-867A638F40DC} = {E182D482-D1CB-45FE-946D-993FD35240BD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {47371F15-1873-4620-9CA6-1030D559449A}
