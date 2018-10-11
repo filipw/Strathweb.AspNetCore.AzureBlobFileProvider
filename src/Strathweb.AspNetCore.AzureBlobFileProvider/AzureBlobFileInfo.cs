@@ -1,5 +1,5 @@
-﻿using Microsoft.Azure.Storage.Blob;
-using Microsoft.Extensions.FileProviders;
+﻿using Microsoft.Extensions.FileProviders;
+using Microsoft.WindowsAzure.Storage.Blob;
 using System;
 using System.IO;
 
