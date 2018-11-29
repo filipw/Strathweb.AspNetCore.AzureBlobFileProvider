@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Description>Azure Blob Storage file provider for ASP.NET Core.</Description>
-    <VersionPrefix>0.1.0</VersionPrefix>
+    <VersionPrefix>0.3.0</VersionPrefix>
     <Authors>filipw</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageTags>azure;blob;storage;aspnetcore;mvc</PackageTags>
@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.FileProviders.Abstractions" Version="2.1.1" />
-    <PackageReference Include="Microsoft.Azure.Storage.Blob" Version="9.4.0" />
+    <PackageReference Include="Microsoft.Azure.Storage.Blob" Version="9.4.1" />
   </ItemGroup>
 
 </Project>
