@@ -5,10 +5,8 @@ Azure Blob Storage file provider (`IFileProvider`) for ASP.NET Core.
 ### Installation
 
 ```
-Install-Package Strathweb.AspNetCore.AzureBlobFileProvider -IncludePrerelease
+Install-Package Strathweb.AspNetCore.AzureBlobFileProvider
 ```
-
-The package is currently prerelease, due to a dependency on [Microsoft.Azure.Storage.Blob](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/) which is also prerelease-only.
 
 ### Usage
 
