@@ -6,29 +6,29 @@ namespace Strathweb.AspNetCore.AzureBlobFileProvider
 {
     public class AzureBlobFileProvider : IFileProvider
     {
-        private readonly IContainerFactory _containerFactory;
+        private readonly IBlobContainerFactory _blobContainerFactory;
 
-        public AzureBlobFileProvider(IContainerFactory containerFactory)
+        public AzureBlobFileProvider(IBlobContainerFactory blobContainerFactory)
         {
-            _containerFactory = containerFactory;
+            _blobContainerFactory = blobContainerFactory;
         }
 
         public AzureBlobFileProvider(AzureBlobOptions azureBlobOptions)
         {
-            _containerFactory = new DefaultContainerFactory(azureBlobOptions);
+            _blobContainerFactory = new DefaultBlobContainerFactory(azureBlobOptions);
         }
 
         public IDirectoryContents GetDirectoryContents(string subpath)
         {
-            var container = _containerFactory.GetContainer(subpath);
-            var blob = container.GetDirectoryReference(_containerFactory.TransformPath(subpath));
+            var container = _blobContainerFactory.GetContainer(subpath);
+            var blob = container.GetDirectoryReference(_blobContainerFactory.TransformPath(subpath));
             return new AzureBlobDirectoryContents(blob);
         }
 
         public IFileInfo GetFileInfo(string subpath)
         {
-            var container = _containerFactory.GetContainer(subpath);
-            var blob = container.GetBlockBlobReference(_containerFactory.TransformPath(subpath));
+            var container = _blobContainerFactory.GetContainer(subpath);
+            var blob = container.GetBlockBlobReference(_blobContainerFactory.TransformPath(subpath));
             return new AzureBlobFileInfo(blob);
         }
 

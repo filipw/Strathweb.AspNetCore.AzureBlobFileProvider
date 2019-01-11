@@ -5,11 +5,11 @@ using Microsoft.WindowsAzure.Storage.Blob;
 
 namespace Strathweb.AspNetCore.AzureBlobFileProvider
 {
-    public class DefaultContainerFactory : IContainerFactory
+    public class DefaultBlobContainerFactory : IBlobContainerFactory
     {
         private readonly CloudBlobContainer _container;
 
-        public DefaultContainerFactory(AzureBlobOptions azureBlobOptions)
+        public DefaultBlobContainerFactory(AzureBlobOptions azureBlobOptions)
         {
             CloudBlobClient blobClient;
             if (azureBlobOptions.ConnectionString != null && CloudStorageAccount.TryParse(azureBlobOptions.ConnectionString, out var cloudStorageAccount))

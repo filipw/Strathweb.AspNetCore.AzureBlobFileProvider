@@ -2,7 +2,7 @@
 
 namespace Strathweb.AspNetCore.AzureBlobFileProvider
 {
-    public interface IContainerFactory
+    public interface IBlobContainerFactory
     {
         CloudBlobContainer GetContainer(string subpath);
         string TransformPath(string subpath);
