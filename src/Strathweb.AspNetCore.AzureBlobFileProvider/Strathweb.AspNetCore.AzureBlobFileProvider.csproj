@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Description>Azure Blob Storage file provider for ASP.NET Core.</Description>
-    <VersionPrefix>0.3.1</VersionPrefix>
+    <VersionPrefix>0.4.0</VersionPrefix>
     <Authors>filipw</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageTags>azure;blob;storage;aspnetcore;mvc</PackageTags>
