@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.FileProviders;
-using Microsoft.WindowsAzure.Storage.Blob;
-using System;
+﻿using System;
 using System.IO;
+using Microsoft.Azure.Storage.Blob;
+using Microsoft.Extensions.FileProviders;
 
 namespace Strathweb.AspNetCore.AzureBlobFileProvider
 {
