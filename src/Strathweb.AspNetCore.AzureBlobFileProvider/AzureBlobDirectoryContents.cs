@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Azure.Storage.Blob;
 using Microsoft.Extensions.FileProviders;
-using Microsoft.WindowsAzure.Storage.Blob;
 
 namespace Strathweb.AspNetCore.AzureBlobFileProvider
 {
