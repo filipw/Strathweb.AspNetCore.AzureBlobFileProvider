@@ -44,10 +44,7 @@ namespace Strathweb.AspNetCore.AzureBlobFileProvider
 
         public Stream CreateReadStream()
         {
-            var stream = new MemoryStream();
-            _blockBlob.DownloadToStream(stream);
-            stream.Position = 0;
-            return stream;
+            return _blockBlob.OpenRead();
         }
 
         public bool Exists { get; }
