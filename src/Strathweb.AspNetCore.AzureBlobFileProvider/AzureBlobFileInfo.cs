@@ -17,7 +17,6 @@ namespace Strathweb.AspNetCore.AzureBlobFileProvider
                     Exists = true;
                     IsDirectory = true;
                     Name = ((CloudBlobDirectory)blob).Prefix.TrimEnd('/');
-                    PhysicalPath = d.StorageUri.PrimaryUri.ToString();
                     break;
 
                 case CloudBlockBlob b:
@@ -28,7 +27,6 @@ namespace Strathweb.AspNetCore.AzureBlobFileProvider
                     {
                         b.FetchAttributes();
                         Length = b.Properties.Length;
-                        PhysicalPath = b.Uri.ToString();
                         LastModified = b.Properties.LastModified ?? DateTimeOffset.MinValue;
                     }
                     else
