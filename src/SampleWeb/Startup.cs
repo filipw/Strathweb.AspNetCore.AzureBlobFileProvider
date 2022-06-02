@@ -27,13 +27,8 @@ namespace SampleWeb
             services.AddSingleton(azureBlobFileProvider);
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
             var blobFileProvider = app.ApplicationServices.GetRequiredService<AzureBlobFileProvider>();
             app.UseStaticFiles(new StaticFileOptions()
             {
