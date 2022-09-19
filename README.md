@@ -101,6 +101,38 @@ Below is the usage example for both flows - where access to files from Blob Stor
 
 In case both `ConnectionString` and `Token` are present, connection string is given the preference.
 
+### Security considerations
+
+Please note that the providers hook into the asp.net static file middleware and by default there is no authorization on static files. cfr. https://docs.microsoft.com/en-us/aspnet/core/fundamentals/static-files?view=aspnetcore-3.1#static-file-authorization
+
+However, there is an easy and elegant solution when you want those files to be secured with the default asp.net authorization.
+
+In the example above, the following
+
+```
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = blobFileProvider,
+                RequestPath = "/files"
+            });
+```
+
+becomes
+
+```
+            app.UseStaticFiles(new StaticFileOptions()
+                {
+                    FileProvider = blobFileProvider,
+                    RequestPath = "/files",
+                    OnPrepareResponse = (context) => {
+                        if (!context.Context.User.Identity.IsAuthenticated)
+                        {
+                            throw new Exception("Not authenticated");
+                        }
+                    }
+                });
+```
+
 ### Current limitations
 
 The watch functionality of the file provider is currently not supported.
